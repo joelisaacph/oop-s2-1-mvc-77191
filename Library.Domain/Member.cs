@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Library.Domain;
+
+public class Member
+{
+    public int Id { get; set; }
+    public string FullName { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Phone { get; set; } = string.Empty;
+
+    // Relación: Un miembro puede tener muchos préstamos
+    public ICollection<Loan> Loans { get; set; } = new List<Loan>();
+}
